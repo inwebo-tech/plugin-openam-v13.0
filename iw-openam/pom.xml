@@ -10,7 +10,7 @@
     </parent>
 
     <artifactId>iw-openam</artifactId>
-    <name>OpenAM Community 13.0.0</name>
+    <name>OpenAM 13.0.0 Custom Authentication Module</name>
 
     <properties>
         <main.dir>${project.basedir}/..</main.dir>
