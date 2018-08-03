@@ -1,0 +1,30 @@
+<thead>
+<tr>
+    <th>{{t "console.authentication.editChains.processingClass.className"}}</th>
+    <th class="fr-col-btn-1"></th>
+</tr>
+</thead>
+<tbody>
+{{#each chainData.loginPostProcessClass}}
+<tr {{#equals this
+""}}class="hidden"{{/equals}}>
+<td><code>{{this}}</code></td>
+<td class="fr-col-btn-1">
+    <div class="btn-group">
+        <button class="btn btn-link delete-btn"><i class="fa fa-times"></i></button>
+    </div>
+</td>
+</tr>
+{{/each}}
+<tr class="tr-row">
+    <td><input type="text" class="form-control" id="newProcessClass" placeholder="{{t 'console.authentication.editChains.addValue'}}"></td>
+    <td class="fr-col-btn-1">
+        <div class="btn-group">
+            <button id="addBtn" class="btn btn-default" disabled type="button"><i class="fa fa-plus"></i></button>
+        </div>
+    </td>
+</tr>
+<tr class="tr-row">
+    <td colspan="2" id="alertContainer"></td>
+</tr>
+</tbody>

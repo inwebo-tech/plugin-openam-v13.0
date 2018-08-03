@@ -1,0 +1,13 @@
+<label class="sr-only separator" for="{{id}}">
+    <span>{{prompt}}</span>
+</label>
+<input type="text"
+       id="{{id}}"
+       name="callback_{{index}}"
+       value="{{value}}"
+       data-validator="required"
+       required
+       data-validator-event="keyup"
+       class="form-control input-lg"
+       placeholder="{{prompt}}"
+       {{#equals index 0}}autofocus{{/equals}} />

@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.inwebo.integrations.openam</groupId>
+    <artifactId>plugin-openam-v13.0</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
+    <name>inWebo OpenAM v13.0.0 Custom Authentication Module</name>
+    <url>https://github.com/inwebo-tech/plugin-openam-v13.0</url>
+
+    <issueManagement>
+        <url>https://github.com/inwebo-tech/plugin-openam-v13.0/issues</url>
+        <system>GitHub Issues</system>
+    </issueManagement>
+
+    <licenses>
+        <license>
+            <name>MIT License</name>
+            <url>http://www.opensource.org/licenses/mit-license.php</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+
+    <scm>
+        <connection>scm:git:git@github.com:inwebo-tech/plugin-openam-v13.0.git</connection>
+        <developerConnection>scm:git:git@github.com:inwebo-tech/plugin-openam-v13.0.git</developerConnection>
+        <url>https://github.com/inwebo-tech/plugin-openam-v13.0</url>
+        <tag>HEAD</tag>
+    </scm>
+
+    <modules>
+        <module>openam-ui-ria</module>
+        <module>iw-openam</module>
+    </modules>
+
+    <properties>
+        <java.version>1.7</java.version>
+        <maven.compiler.showWarnings>true</maven.compiler.showWarnings>
+        <maven.site.deploy.skip>true</maven.site.deploy.skip>
+        <maven.compiler.parameters>false</maven.compiler.parameters>
+        <maven.compiler.forceJavacCompilerUse>true</maven.compiler.forceJavacCompilerUse>
+        <maven.compiler.showDeprecation>true</maven.compiler.showDeprecation>
+        <maven.compiler.optimize>false</maven.compiler.optimize>
+        <maven.compiler.source>${java.version}</maven.compiler.source>
+        <maven.compiler.target>${java.version}</maven.compiler.target>
+        <maven.source.skip>false</maven.source.skip>
+        <maven.javadoc.skip>true</maven.javadoc.skip>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <main.dir>${project.basedir}</main.dir>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>com.inwebo.integrations</groupId>
+                <artifactId>idp-connector-auth-repackage</artifactId>
+                <version>${idp-connector-auth.version}</version>
+                <scope>system</scope>
+                <systemPath>${main.dir}/lib/idp-connector-auth-repackage-1.0.0.jar</systemPath>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <version>3.7.0</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-jar-plugin</artifactId>
+                    <version>3.0.2</version>
+                    <configuration>
+                        <skipIfEmpty>true</skipIfEmpty>
+                        <archive>
+                            <manifest>
+                                <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
+                                <addDefaultSpecificationEntries>true</addDefaultSpecificationEntries>
+                            </manifest>
+                        </archive>
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-source-plugin</artifactId>
+                    <version>3.0.1</version>
+                    <executions>
+                        <execution>
+                            <id>attach-sources</id>
+                            <goals>
+                                <goal>jar</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-assembly-plugin</artifactId>
+                    <version>3.1.0</version>
+                    <configuration>
+                        <tarLongFileMode>posix</tarLongFileMode>
+                        <appendAssemblyId>false</appendAssemblyId>
+                        <encoding>${project.build.sourceEncoding}</encoding>
+                    </configuration>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
+</project>

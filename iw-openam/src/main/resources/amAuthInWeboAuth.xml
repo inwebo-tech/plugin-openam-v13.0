@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE ServicesConfiguration
+        PUBLIC "=//iPlanet//Service Management Services (SMS) 1.0 DTD//EN"
+        "jar://com/sun/identity/sm/sms.dtd">
+<ServicesConfiguration>
+    <Service name="iPlanetAMAuthInWeboAuthService" version="1.0">
+        <Schema serviceHierarchy="/DSAMEConfig/authentication/iPlanetAMAuthInWeboAuthService"
+                i18nFileName="amAuthInWeboAuth"
+                revisionNumber="1"
+                i18nKey="inwebo.i18n.description"
+                resourceName="inWebo">
+            <Organization>
+                <AttributeSchema name="iplanet-am-auth-inwebo-base-url"
+                                 type="single"
+                                 syntax="string"
+                                 order="100"
+                                 i18nKey="inwebo.i18n.base.url"
+                                 resourceName="inWeboBaseUrl">
+                    <DefaultValues>
+                        <Value>https://api.myinwebo.com/FS</Value>
+                    </DefaultValues>
+                </AttributeSchema>
+                <AttributeSchema name="iplanet-am-auth-inwebo-serviceid"
+                                 type="single"
+                                 syntax="number_range"
+                                 rangeStart="0"
+                                 order="200"
+                                 rangeEnd="2147483647"
+                                 i18nKey="inwebo.i18n.service.id"
+                                 resourceName="inWeboServiceId">
+                    <DefaultValues>
+                        <Value>0</Value>
+                    </DefaultValues>
+                </AttributeSchema>
+                <AttributeSchema name="iplanet-am-auth-inwebo-browser-authenticator"
+                                 type="single_choice"
+                                 syntax="string"
+                                 order="300"
+                                 i18nKey="inwebo.i18n.service.browser.authenticator"
+                                 resourceName="inWeboBrowserAuthenticator">
+                    <ChoiceValues>
+                        <ChoiceValue i18nKey="choiceActive">Active</ChoiceValue>
+                        <ChoiceValue i18nKey="choiceInactive">Inactive</ChoiceValue>
+                    </ChoiceValues>
+                    <DefaultValues>
+                        <Value>Active</Value>
+                    </DefaultValues>
+                </AttributeSchema>
+                <AttributeSchema name="iplanet-am-auth-inwebo-browser-alias"
+                                 type="single"
+                                 syntax="string"
+                                 order="400"
+                                 i18nKey="inwebo.i18n.service.browser.alias"
+                                 resourceName="inWeboBrowserAlias"/>
+                <AttributeSchema name="iplanet-am-auth-inwebo-push-authenticator"
+                                 type="single_choice"
+                                 syntax="string"
+                                 order="500"
+                                 i18nKey="inwebo.i18n.service.push.authenticator"
+                                 resourceName="inWeboPushAuthenticator">
+                    <ChoiceValues>
+                        <ChoiceValue i18nKey="inwebo.i18n.choiceActive">Active</ChoiceValue>
+                        <ChoiceValue i18nKey="inwebo.i18n.choiceInactive">Inactive</ChoiceValue>
+                    </ChoiceValues>
+                    <DefaultValues>
+                        <Value>Inactive</Value>
+                    </DefaultValues>
+                </AttributeSchema>
+                <AttributeSchema name="iplanet-am-auth-inwebo-certificate-path"
+                                 type="single"
+                                 syntax="string"
+                                 validator="no"
+                                 order="600"
+                                 i18nKey="inwebo.i18n.certificate.path"
+                                 resourceName="inWeboCertificatePath">
+                    <DefaultValues>
+                        <Value>/the/path/to/your/certificate.p12</Value>
+                    </DefaultValues>
+                </AttributeSchema>
+                <AttributeSchema name="iplanet-am-auth-inwebo-certificate-password"
+                                 type="single"
+                                 syntax="password"
+                                 i18nKey="inwebo.i18n.certificate.password"
+                                 order="700"
+                                 resourceName="inWeboCertificatePassword"/>
+                <AttributeSchema name="iplanet-am-auth-inwebo-proxy-url"
+                                 type="single"
+                                 syntax="string"
+                                 order="800"
+                                 i18nKey="inwebo.i18n.proxy.url"
+                                 resourceName="inWeboProxyUrl"/>
+                <AttributeSchema name="iplanet-am-auth-inwebo-proxy-username"
+                                 type="single"
+                                 syntax="string"
+                                 order="900"
+                                 i18nKey="inwebo.i18n.proxy.username"
+                                 resourceName="inWeboProxyUsername"/>
+                <AttributeSchema name="iplanet-am-auth-inwebo-proxy-password"
+                                 type="single"
+                                 syntax="password"
+                                 order="910"
+                                 i18nKey="inwebo.i18n.proxy.password"
+                                 resourceName="inWeboProxyPassword"/>
+                <SubSchema name="serverconfig" inheritance="multiple" resourceName="USE-PARENT">
+                    <AttributeSchema name="iplanet-am-auth-inwebo-base-url"
+                                     type="single"
+                                     syntax="string"
+                                     order="100"
+                                     i18nKey="inwebo.i18n.base.url"
+                                     resourceName="inWeboBaseUrl">
+                        <DefaultValues>
+                            <Value>https://api.myinwebo.com/FS</Value>
+                        </DefaultValues>
+                    </AttributeSchema>
+                    <AttributeSchema name="iplanet-am-auth-inwebo-serviceid"
+                                     type="single"
+                                     syntax="number_range"
+                                     rangeStart="0"
+                                     order="200"
+                                     rangeEnd="2147483647"
+                                     i18nKey="inwebo.i18n.service.id"
+                                     resourceName="inWeboServiceId">
+                        <DefaultValues>
+                            <Value>0</Value>
+                        </DefaultValues>
+                    </AttributeSchema>
+                    <AttributeSchema name="iplanet-am-auth-inwebo-browser-authenticator"
+                                     type="single_choice"
+                                     syntax="string"
+                                     order="300"
+                                     i18nKey="inwebo.i18n.service.browser.authenticator"
+                                     resourceName="inWeboBrowserAuthenticator">
+                        <ChoiceValues>
+                            <ChoiceValue i18nKey="choiceActive">Active</ChoiceValue>
+                            <ChoiceValue i18nKey="choiceInactive">Inactive</ChoiceValue>
+                        </ChoiceValues>
+                        <DefaultValues>
+                            <Value>Active</Value>
+                        </DefaultValues>
+                    </AttributeSchema>
+                    <AttributeSchema name="iplanet-am-auth-inwebo-browser-alias"
+                                     type="single"
+                                     syntax="string"
+                                     order="400"
+                                     i18nKey="inwebo.i18n.service.browser.alias"
+                                     resourceName="inWeboBrowserAlias"/>
+                    <AttributeSchema name="iplanet-am-auth-inwebo-push-authenticator"
+                                     type="single_choice"
+                                     syntax="string"
+                                     order="500"
+                                     i18nKey="inwebo.i18n.service.push.authenticator"
+                                     resourceName="inWeboPushAuthenticator">
+                        <ChoiceValues>
+                            <ChoiceValue i18nKey="inwebo.i18n.choiceActive">Active</ChoiceValue>
+                            <ChoiceValue i18nKey="inwebo.i18n.choiceInactive">Inactive</ChoiceValue>
+                        </ChoiceValues>
+                        <DefaultValues>
+                            <Value>Inactive</Value>
+                        </DefaultValues>
+                    </AttributeSchema>
+                    <AttributeSchema name="iplanet-am-auth-inwebo-certificate-path"
+                                     type="single"
+                                     syntax="string"
+                                     validator="no"
+                                     order="600"
+                                     i18nKey="inwebo.i18n.certificate.path"
+                                     resourceName="inWeboCertificatePath">
+                        <DefaultValues>
+                            <Value>/the/path/to/your/certificate.p12</Value>
+                        </DefaultValues>
+                    </AttributeSchema>
+                    <AttributeSchema name="iplanet-am-auth-inwebo-certificate-password"
+                                     type="single"
+                                     syntax="password"
+                                     i18nKey="inwebo.i18n.certificate.password"
+                                     order="700"
+                                     resourceName="inWeboCertificatePassword"/>
+                    <AttributeSchema name="iplanet-am-auth-inwebo-proxy-url"
+                                     type="single"
+                                     syntax="string"
+                                     order="800"
+                                     i18nKey="inwebo.i18n.proxy.url"
+                                     resourceName="inWeboProxyUrl"/>
+                    <AttributeSchema name="iplanet-am-auth-inwebo-proxy-username"
+                                     type="single"
+                                     syntax="string"
+                                     order="900"
+                                     i18nKey="inwebo.i18n.proxy.username"
+                                     resourceName="inWeboProxyUsername"/>
+                    <AttributeSchema name="iplanet-am-auth-inwebo-proxy-password"
+                                     type="single"
+                                     syntax="password"
+                                     order="910"
+                                     i18nKey="inwebo.i18n.proxy.password"
+                                     resourceName="inWeboProxyPassword"/>
+                </SubSchema>
+            </Organization>
+        </Schema>
+    </Service>
+</ServicesConfiguration>
