@@ -23,7 +23,7 @@ Installation
 ------------
    
   ```bash
-  $ sudo unzip iw-openam-auth-*.zip -d /tmp/openam-ui-inwebo
+  $ sudo unzip iw-openam-*.zip -d /tmp/openam-ui-inwebo
   $ sudo cp /tmp/openam-ui-inwebo/edit-webapp/WEB-INF/lib/*.jar /path/to/tomcat/webapps/openam/WEB-INF/lib/
   $ sudo cp /tmp/openam-ui-inwebo/edit-webapp/config/auth/default/* /path/to/tomcat/webapps/openam/config/auth/default/
   $ sudo tar cvjf xui-backup-orig.tar.bz /path/to/tomcat/webapps/openam/XUI/ 
