@@ -33,7 +33,7 @@ Installation
   $ sudo echo password > /tmp/pwd.txt
   $ sudo chmod 400 /tmp/pwd.txt
   $ sudo ssoadm create-svc -u amadmin --password-file /tmp/pwd.txt --xmlfile /tmp/openam-ui-inwebo/config/amAuthInWeboAuth.xml -v
-  $ sudo ssoadm register-auth-module -u amadmin -f /tmp/pwd.txt -a org.forgerock.openam.inwebo.InWeboAuth -v
+  $ sudo ssoadm register-auth-module -u amadmin -f /tmp/pwd.txt -a com.inwebo.integrations.openam.InWeboAuth -v
   $ sudo /etc/init.d/tomcat restart
   ```
  

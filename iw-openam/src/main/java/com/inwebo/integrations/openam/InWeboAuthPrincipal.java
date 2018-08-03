@@ -1,4 +1,4 @@
-package org.forgerock.openam.inwebo;
+package com.inwebo.integrations.openam;
 
 import org.apache.commons.lang.builder.EqualsBuilder;
 import org.apache.commons.lang.builder.HashCodeBuilder;

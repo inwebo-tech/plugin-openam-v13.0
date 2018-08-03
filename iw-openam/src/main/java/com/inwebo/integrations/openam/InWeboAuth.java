@@ -1,4 +1,4 @@
-package org.forgerock.openam.inwebo;
+package com.inwebo.integrations.openam;
 
 import com.inwebo.integrations.auth.InWeboRestAuthenticator;
 import com.sun.identity.authentication.spi.AMLoginModule;
